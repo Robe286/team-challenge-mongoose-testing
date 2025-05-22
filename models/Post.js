@@ -2,8 +2,8 @@
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema({
-    title: String,
-    body: String,
+    title: {type: String, required: true},
+    body: {type: String, required: true}
 }, {timestamps: true});
 
 // Compilamos el modelo al schema:
@@ -11,6 +11,6 @@ const PostSchema = new mongoose.Schema({
 // Mongoose busca automáticamente la versión en plural, en minúsculas, del nombre del modelo.
 // Por lo tanto, el modelo "User" corresponde a la colección de users de la base de datos. 
 
-const Post = mongoose.model('Post', PostSchema);
+const Post = mongoose.model('post', PostSchema);
 
 module.exports = Post;

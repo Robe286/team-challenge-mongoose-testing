@@ -8,7 +8,7 @@ const routes = require('./routes/posts.js');
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
-app.use('/create', routes);
+app.use('/', routes);
 
 dbConnection();
 
